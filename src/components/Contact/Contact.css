@@ -57,7 +57,7 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(220, 38, 38, 0.1);
   border: 1px solid var(--border-medium);
   border-radius: 0.75rem;
   color: var(--accent-primary);
@@ -78,7 +78,7 @@
 
 .availability-status {
   padding: 1.5rem;
-  background: rgba(37, 99, 235, 0.05);
+  background: rgba(220, 38, 38, 0.05);
   border: 1px solid var(--border-light);
   border-radius: 1rem;
 }
@@ -145,7 +145,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
 
 .form-group textarea {

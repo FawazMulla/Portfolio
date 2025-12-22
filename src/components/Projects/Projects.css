@@ -89,7 +89,7 @@
 
 .project-card.featured {
   border-color: var(--accent-primary);
-  background: linear-gradient(145deg, var(--bg-primary) 0%, rgba(37, 99, 235, 0.05) 100%);
+  background: linear-gradient(145deg, var(--bg-primary) 0%, rgba(220, 38, 38, 0.05) 100%);
   position: relative;
 }
 
@@ -116,12 +116,12 @@
   z-index: 2;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
 }
 
 .project-image {
   height: 220px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,7 +231,7 @@
 
 .tech-badge {
   padding: 0.5rem 1rem;
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(220, 38, 38, 0.1);
   border: 1px solid var(--border-medium);
   border-radius: 2rem;
   font-size: 0.8rem;
@@ -241,7 +241,7 @@
 }
 
 .tech-badge:hover {
-  background: rgba(37, 99, 235, 0.2);
+  background: rgba(220, 38, 38, 0.2);
   transform: translateY(-2px);
 }
 
@@ -271,7 +271,7 @@
   border-color: var(--accent-primary);
   color: var(--accent-primary);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
 }
 
 .project-link:first-child:hover {
