@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://FawazMulla.github.io/Portfolio",
+  "homepage": "https://fawazmulla.github.io/Portfolio",
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
