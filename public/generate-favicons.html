@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator for Portfolio</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f8fafc;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            margin: 1rem;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .preview-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f1f5f9;
+            border-radius: 0.5rem;
+        }
+        button {
+            background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+        button:hover {
+            transform: translateY(-1px);
+        }
+        .instructions {
+            background: #eff6ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #1d4ed8;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio Favicon Generator</h1>
+        <p>Generate all required favicon files for your portfolio website.</p>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click "Generate All Favicons" below</li>
+                <li>Right-click each canvas and "Save image as..."</li>
+                <li>Save with the exact filenames shown</li>
+                <li>Place all files in your <code>/public/</code> folder</li>
+            </ol>
+        </div>
+        
+        <button onclick="generateAllFavicons()">Generate All Favicons</button>
+        <button onclick="clearAll()">Clear All</button>
+        
+        <div class="preview-grid" id="previewGrid">
+            <!-- Canvases will be generated here -->
+        </div>
+    </div>
+
+    <script>
+        function drawFavicon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            const scale = size / 32; // Base size is 32px
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Create gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#1d4ed8');
+            gradient.addColorStop(1, '#7c3aed');
+            
+            // Draw background with rounded corners
+            ctx.fillStyle = gradient;
+            drawRoundedRect(ctx, 0, 0, size, size, 8 * scale);
+            ctx.fill();
+            
+            // Draw inner highlight
+            ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+            ctx.lineWidth = 1 * scale;
+            drawRoundedRect(ctx, 2 * scale, 2 * scale, size - 4 * scale, size - 4 * scale, 6 * scale);
+            ctx.stroke();
+            
+            // Draw content area
+            ctx.fillStyle = 'rgba(255,255,255,0.1)';
+            drawRoundedRect(ctx, 6 * scale, 8 * scale, 20 * scale, 16 * scale, 2 * scale);
+            ctx.fill();
+            
+            // Draw code brackets
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 2 * scale;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            // Left bracket
+            ctx.beginPath();
+            ctx.moveTo(10 * scale, 12 * scale);
+            ctx.lineTo(8 * scale, 16 * scale);
+            ctx.lineTo(10 * scale, 20 * scale);
+            ctx.stroke();
+            
+            // Right bracket
+            ctx.beginPath();
+            ctx.moveTo(22 * scale, 12 * scale);
+            ctx.lineTo(24 * scale, 16 * scale);
+            ctx.lineTo(22 * scale, 20 * scale);
+            ctx.stroke();
+            
+            // Center dot
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(16 * scale, 16 * scale, 2 * scale, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Accent dots
+            ctx.fillStyle = 'rgba(255,255,255,0.6)';
+            ctx.beginPath();
+            ctx.arc(13 * scale, 13 * scale, 1 * scale, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(19 * scale, 19 * scale, 1 * scale, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+        
+        function drawRoundedRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+        
+        function createCanvasPreview(size, filename, description) {
+            const previewItem = document.createElement('div');
+            previewItem.className = 'preview-item';
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            canvas.style.width = size > 32 ? '64px' : size + 'px';
+            canvas.style.height = size > 32 ? '64px' : size + 'px';
+            
+            const title = document.createElement('h4');
+            title.textContent = `${size}x${size}px`;
+            
+            const filenameEl = document.createElement('code');
+            filenameEl.textContent = filename;
+            filenameEl.style.background = '#e2e8f0';
+            filenameEl.style.padding = '0.25rem 0.5rem';
+            filenameEl.style.borderRadius = '0.25rem';
+            
+            const desc = document.createElement('p');
+            desc.textContent = description;
+            desc.style.fontSize = '0.875rem';
+            desc.style.color = '#64748b';
+            desc.style.margin = '0.5rem 0';
+            
+            const downloadBtn = document.createElement('button');
+            downloadBtn.textContent = 'Download';
+            downloadBtn.onclick = () => downloadCanvas(canvas, filename);
+            
+            previewItem.appendChild(title);
+            previewItem.appendChild(canvas);
+            previewItem.appendChild(document.createElement('br'));
+            previewItem.appendChild(filenameEl);
+            previewItem.appendChild(desc);
+            previewItem.appendChild(downloadBtn);
+            
+            drawFavicon(canvas, size);
+            
+            return previewItem;
+        }
+        
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+        
+        function generateAllFavicons() {
+            const grid = document.getElementById('previewGrid');
+            grid.innerHTML = '';
+            
+            const sizes = [
+                { size: 16, filename: 'favicon-16x16.png', desc: 'Small browser tab' },
+                { size: 32, filename: 'favicon-32x32.png', desc: 'Standard browser tab' },
+                { size: 180, filename: 'apple-touch-icon.png', desc: 'iOS home screen' },
+                { size: 512, filename: 'favicon-512x512.png', desc: 'High resolution base' }
+            ];
+            
+            sizes.forEach(({ size, filename, desc }) => {
+                const preview = createCanvasPreview(size, filename, desc);
+                grid.appendChild(preview);
+            });
+            
+            // Add instructions for ICO file
+            const icoInstructions = document.createElement('div');
+            icoInstructions.className = 'preview-item';
+            icoInstructions.innerHTML = `
+                <h4>favicon.ico</h4>
+                <p style="color: #64748b; margin: 1rem 0;">
+                    Use an online ICO converter to create favicon.ico from the 32x32 PNG file.
+                    <br><br>
+                    Recommended: <a href="https://favicon.io/favicon-converter/" target="_blank">favicon.io converter</a>
+                </p>
+            `;
+            grid.appendChild(icoInstructions);
+        }
+        
+        function clearAll() {
+            document.getElementById('previewGrid').innerHTML = '';
+        }
+        
+        // Generate on page load
+        window.onload = generateAllFavicons;
+    </script>
+</body>
+</html>

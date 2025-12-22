@@ -9,9 +9,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:quiet": "cross-env NODE_OPTIONS=--no-deprecation react-scripts start",
+    "start:windows-quiet": "set NODE_OPTIONS=--no-deprecation && react-scripts start",
     "build": "react-scripts build",
+    "build:analyze": "npm run build && npx serve -s build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "serve": "npx serve -s build -l 3000"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
   }
 }

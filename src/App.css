@@ -1,0 +1,123 @@
+.App {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Section alternating backgrounds with better contrast */
+.hero {
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.about {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.achievements {
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.experience {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.skills {
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.projects {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.contact {
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.footer {
+  background: var(--bg-tertiary);
+  border-top: 2px solid var(--border-medium);
+}
+
+/* Smooth transitions for all components */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Grid layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Responsive grids */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
