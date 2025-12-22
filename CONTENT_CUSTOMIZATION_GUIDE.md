@@ -32,7 +32,7 @@ src/
 **Key variables to modify:**
 ```javascript
 // Line 6-8: Personal info
-const name = "Sarah Johnson";  // Change your name
+const name = "Mohammed Fawaz Mulla";  // Change your name
 const title = "3rd Year IT Student";  // Change your title
 
 // Line 10-15: Typing animation texts

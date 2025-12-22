@@ -45,7 +45,7 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-content">
           <div className="navbar-brand">
-            <span className="brand-text">Sarah Johnson</span>
+            <span className="brand-text">Mohammed Fawaz Mulla</span>
           </div>
 
           <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>

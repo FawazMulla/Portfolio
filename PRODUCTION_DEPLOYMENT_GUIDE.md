@@ -121,8 +121,8 @@ Edit these files before building:
 ### Update Meta Tags:
 Edit `public/index.html`:
 ```html
-<title>Sarah Johnson - IT Student Portfolio</title>
-<meta name="description" content="Portfolio of Sarah Johnson, 3rd year IT student specializing in web development and software engineering.">
+<title>Mohammed Fawaz Mulla - IT Student Portfolio</title>
+<meta name="description" content="Portfolio of Mohammed Fawaz Mulla, 3rd year IT student specializing in web development and software engineering.">
 <meta name="keywords" content="IT student, web developer, React, portfolio">
 ```
 

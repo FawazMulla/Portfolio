@@ -130,7 +130,7 @@ Create a 1200x630px image for social sharing:
 Size: 1200x630px
 Background: Portfolio gradient or brand colors
 Content: 
-  - Your name "Sarah Johnson"
+  - Your name "Mohammed Fawaz Mulla"
   - "IT Student Portfolio" 
   - Favicon logo
   - Clean, professional layout

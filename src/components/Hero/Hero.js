@@ -77,7 +77,7 @@ const Hero = () => {
           </div>
 
           <h1 className="hero-title">
-            Hi, I'm <span className="text-gradient">Sarah Johnson</span>
+            Hi, I'm <span className="text-gradient">Mohammed Fawaz Mulla</span>
           </h1>
 
           <div className="hero-subtitle">
@@ -143,7 +143,7 @@ const Hero = () => {
             <div className="profile-photo">
               <img 
                 src="/images/profile-photo.jpg" 
-                alt="Sarah Johnson - IT Student" 
+                alt="Mohammed Fawaz Mulla - IT Student" 
                 className="profile-image"
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -181,7 +181,7 @@ const Hero = () => {
                 </div>
                 <div className="code-line code-indent">
                   <span className="code-property">name:</span> 
-                  <span className="code-string">'Sarah Johnson'</span>,
+                  <span className="code-string">'Mohammed Fawaz Mulla'</span>,
                 </div>
                 <div className="code-line code-indent">
                   <span className="code-property">year:</span> 
