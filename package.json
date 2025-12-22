@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://FawazMulla.github.io/portfolio",
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -16,7 +17,10 @@
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "serve": "npx serve -s build -l 3000"
+    "serve": "npx serve -s build -l 3000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "deploy:auto": "node deploy.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^10.1.0"
+    "cross-env": "^10.1.0",
+    "gh-pages": "^6.3.0"
   }
 }
