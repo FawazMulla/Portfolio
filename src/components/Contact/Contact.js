@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
+import React, { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ const Contact = () => {
         },
         process.env.REACT_APP_PUBLIC_KEY
       );
-
+      
       alert("Thanks for reaching out! I'll get back to you soon.");
 
       setFormData({
@@ -101,6 +102,14 @@ const Contact = () => {
       link: "#"
     }
   ];
+  useEffect(() => {
+  console.log('EmailJS ENV:', {
+    serviceId: process.env.REACT_APP_SERVICE_ID,
+    templateId: process.env.REACT_APP_TEMPLATE_ID,
+    publicKey: process.env.REACT_APP_PUBLIC_KEY,
+  });
+}, []);
+
 
   return (
     <section id="contact" className="contact section-padding">
@@ -239,6 +248,7 @@ const Contact = () => {
       </div>
     </section>
   );
+  
 };
 
 export default Contact;
