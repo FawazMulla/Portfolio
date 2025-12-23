@@ -27,8 +27,8 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -36,7 +36,7 @@ const Contact = () => {
           subject: formData.subject,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'
+        process.env.REACT_APP_PUBLIC_KEY
       );
 
       alert("Thanks for reaching out! I'll get back to you soon.");
