@@ -4,12 +4,12 @@ import './About.css';
 const About = () => {
   const achievements = [
     {
-      metric: "3.8",
+      metric: "8.2",
       label: "Current GPA",
       description: "Maintaining strong academic performance"
     },
     {
-      metric: "20+",
+      metric: "30+",
       label: "Projects Built",
       description: "Academic and personal coding projects"
     },

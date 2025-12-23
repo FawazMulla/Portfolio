@@ -5,53 +5,28 @@ const Achievements = () => {
   const achievements = [
     {
       id: 1,
-      title: "Hackathon Winner - TechFest 2024",
-      description: "First place winner at the annual university hackathon with our innovative web application for student collaboration.",
+      title: "Hackathon Winner - Xcelarate - 2025",
+      description: "First place winner at the national level hackathon with our innovative application Ascend Apex (Platform4Excellance) made using OracleApex.",
       date: "March 2024",
       category: "Competition",
-      image: "/images/hackathon-win.jpg",
+      image: `${process.env.PUBLIC_URL}/images/hackathon-win.jpg`,
       details: [
-        "Led a team of 4 developers",
-        "Built a full-stack web application in 48 hours",
-        "Implemented real-time collaboration features",
-        "Presented to a panel of industry judges"
+        "Backend & database engineer",
+        "Built a full-stack web application ",
+        "Implemented real-time collaboration features ",
+        "Presented to a panel of industry judges of Oracle"
       ],
       technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
       award: "1st Place & Best Innovation Award"
     },
-    {
-      id: 2,
-      title: "Dean's List Recognition",
-      description: "Achieved Dean's List status for academic excellence with a GPA of 3.8 or higher for consecutive semesters.",
-      date: "Fall 2023 - Present",
-      category: "Academic",
-      details: [
-        "Maintained 3.8+ GPA for 3 consecutive semesters",
-        "Recognized for outstanding academic performance",
-        "Top 10% of IT students in the program"
-      ]
-    },
-    {
-      id: 3,
-      title: "Open Source Contributor",
-      description: "Active contributor to open source projects with multiple merged pull requests and community recognition.",
-      date: "2023 - Present",
-      category: "Development",
-      details: [
-        "15+ merged pull requests across various projects",
-        "Contributed to React ecosystem libraries",
-        "Helped fix bugs and add new features",
-        "Mentored new contributors"
-      ],
-      technologies: ["JavaScript", "React", "TypeScript", "Git"]
-    }
+   
   ];
 
   return (
     <section id="achievements" className="achievements section-padding">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Achievements & Recognition</h2>
+          <h2 className="section-title">Achievements </h2>
           <p className="section-subtitle">
             Milestones and accomplishments that showcase my dedication to excellence in technology and academics
           </p>
@@ -63,12 +38,13 @@ const Achievements = () => {
               {achievement.image && (
                 <div className="achievement-image">
                   <img 
-                    src={achievement.image} 
+                    src={achievement.image}
                     alt={achievement.title}
                     onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
+              e.currentTarget.style.display = "none";
+              const placeholder = e.currentTarget.parentElement.querySelector(".achivement-image-placeholder");
+              if (placeholder) placeholder.style.display = "flex";
+            }}
                   />
                   <div className="image-placeholder" style={{display: 'none'}}>
                     <div className="placeholder-icon">

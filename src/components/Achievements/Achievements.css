@@ -5,7 +5,7 @@
 .achievements-grid {
   display: grid;
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
