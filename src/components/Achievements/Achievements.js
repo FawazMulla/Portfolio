@@ -40,6 +40,14 @@ const Achievements = () => {
                   <img 
                     src={achievement.image}
                     alt={achievement.title}
+                    style={{
+    display: "block",
+    width: "200px",
+    height: "200px",
+    position: "relative",
+    zIndex: 9999,
+    border: "5px solid red"
+  }}
                     onError={(e) => {
               e.currentTarget.style.display = "none";
               const placeholder = e.currentTarget.parentElement.querySelector(".achivement-image-placeholder");
