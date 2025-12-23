@@ -142,7 +142,7 @@ const Hero = () => {
           <div className="profile-section">
             <div className="profile-photo">
               <img 
-                src={`${process.env.PUBLIC_URL}/images/profile-photo.jpg`}
+                src={`${process.env.PUBLIC_URL}/images/profile-photo.JPG`}
                 style={{ border: '5px solid red' }}
                 alt="Mohammed Fawaz Mulla - IT Student" 
                 className="profile-image"
