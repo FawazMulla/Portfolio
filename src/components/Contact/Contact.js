@@ -21,7 +21,7 @@ const Contact = () => {
     });
   };
 
-  // ✅ EmailJS submission (ONLY LOGIC CHANGE)
+  //EmailJS submission 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -66,8 +66,8 @@ const Contact = () => {
         </svg>
       ),
       title: "Email",
-      value: "student@university.edu",
-      link: "mailto:student@university.edu"
+      value: "fawazmulla5@gmail.com",
+      link: "mailto:fawazmulla5@gmail.com"
     },
     {
       icon: (
@@ -75,9 +75,9 @@ const Contact = () => {
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      title: "Discord",
-      value: "StudentDev#1234",
-      link: "#"
+      title: "Linkedin",
+      value: "Mohammed Fawaz Mulla",
+      link: "https://www.linkedin.com/in/mohammed-fawaz-mulla-134b1928a/"
     },
     {
       icon: (
@@ -87,8 +87,8 @@ const Contact = () => {
         </svg>
       ),
       title: "Location",
-      value: "University Campus",
-      link: "#"
+      value: "Mumbai, Maharastra",
+      link: "https://www.google.com/maps?ll=18.96871,72.830823&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=6733443441370304119"
     },
     {
       icon: (
@@ -99,7 +99,7 @@ const Contact = () => {
       ),
       title: "Response Time",
       value: "Usually within a day",
-      link: "#"
+      link: "#contact"
     }
   ];
  
@@ -120,8 +120,7 @@ const Contact = () => {
             <div className="info-header">
               <h3>Get in Touch</h3>
               <p>
-                Whether you want to collaborate on a project, discuss technology, or just chat about 
-                programming, I'm always excited to connect with fellow students and developers.
+                Always open to meaningful conversations around technology, collaboration, and career opportunities.
               </p>
             </div>
 
@@ -142,11 +141,11 @@ const Contact = () => {
                 <div className="status-dot"></div>
                 <span>Open to collaborations</span>
               </div>
-              <p>Always interested in learning opportunities and project collaborations.</p>
+              <p>Always interested in learning, opportunities and project collaborations.</p>
             </div>
           </div>
 
-          {/* ✅ FULL FORM RESTORED */}
+          {/*  FULL FORM RESTORED */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Full Name *</label>
@@ -157,7 +156,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="John Doe"
+                placeholder="Your Name"
               />
             </div>
 
@@ -170,7 +169,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="john@company.com"
+                placeholder="Youremail@company.com"
               />
             </div>
 
@@ -197,6 +196,7 @@ const Contact = () => {
               >
                 <option value="">Select message type</option>
                 <option value="collaboration">Project Collaboration</option>
+                <option value="Recruiment">Recruiment</option>
                 <option value="study-group">Study Group</option>
                 <option value="tech-discussion">Tech Discussion</option>
                 <option value="networking">Networking</option>
