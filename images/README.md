@@ -5,8 +5,8 @@ This directory contains images for your portfolio website.
 ## Required Images:
 
 ### 1. Profile Photo
-- **File**: `profile-photo.jpg`
-- **Location**: `/public/images/profile-photo.jpg`
+- **File**: `profile-photo.webp`
+- **Location**: `/public/images/profile-photo.webp`
 - **Recommended size**: 560x700 pixels (4:5 ratio, portrait)
 - **Format**: JPG or PNG
 - **Description**: Your professional headshot for the Hero section (rectangular/portrait format)
@@ -26,7 +26,7 @@ This directory contains images for your portfolio website.
    - Use descriptive filenames
 
 2. **Add to this directory**:
-   - Copy your profile photo as `profile-photo.jpg`
+   - Copy your profile photo as `profile-photo.webp`
    - Copy your hackathon photo as `hackathon-win.jpg`
 
 3. **Alternative formats**:
@@ -56,7 +56,7 @@ If images are not found, the website will show placeholder icons with instructio
 ```
 public/
 ├── images/
-│   ├── profile-photo.jpg     (Your profile picture)
+│   ├── profile-photo.webp     (Your profile picture)
 │   ├── hackathon-win.jpg     (Hackathon achievement photo)
 │   └── README.md             (This file)
 ```
