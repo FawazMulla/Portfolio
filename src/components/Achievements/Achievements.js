@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { getAssetPath } from '../../../utils/paths';
 
 const Achievements = () => {
   const achievements = [
@@ -9,7 +10,7 @@ const Achievements = () => {
       description: "First place winner at the national level hackathon with our innovative application Ascend Apex (Platform4Excellance) made using OracleApex.",
       date: "March 2024",
       category: "Competition",
-      image: "/images/hackathon-win.JPG",
+      image: getAssetPath("images/hackathon-win.JPG"),
       details: [
         "Backend & database engineer",
         "Built a full-stack web application ",

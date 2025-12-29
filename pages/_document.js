@@ -20,7 +20,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#1a1a1a" />
         
         {/* Manifest for PWA capabilities */}
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/Portfolio/manifest.json" />
       </Head>
       <body>
         <Main />

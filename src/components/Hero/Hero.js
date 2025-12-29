@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
+import { getAssetPath } from '../../../utils/paths';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -143,7 +144,7 @@ const Hero = () => {
           <div className="profile-section">
             <div className="profile-photo">
               <Image
-                src="/images/profile-photo.JPG"
+                src={getAssetPath("images/profile-photo.JPG")}
                 alt="Mohammed Fawaz Mulla - IT Student"
                 width={300}
                 height={300}
