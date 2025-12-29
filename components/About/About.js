@@ -1,5 +1,3 @@
-import React from 'react';
-
 const About = () => {
   const achievements = [
     {
@@ -38,7 +36,7 @@ const About = () => {
 
             <div className="about-description">
               <p>
-                I’m a student and full-stack developer pursuing my degree at
+                I'm a student and full-stack developer pursuing my degree at
                 <strong> M.H Saboo Siddik College of engineering currently in 3rd year of Information Technology.
                 </strong>.
               </p>

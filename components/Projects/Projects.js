@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useState, useEffect } from 'react';
+import { useTheme } from '../../src/contexts/ThemeContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,15 +26,17 @@ const Navbar = () => {
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const navbarHeight = 80; // Account for fixed navbar
-      const elementPosition = element.offsetTop - navbarHeight;
-      
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+    if (typeof window !== 'undefined') {
+      const element = document.querySelector(href);
+      if (element) {
+        const navbarHeight = 80; // Account for fixed navbar
+        const elementPosition = element.offsetTop - navbarHeight;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -89,15 +91,17 @@ const Navbar = () => {
               className="btn btn-primary"
               onClick={(e) => {
                 e.preventDefault();
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  const navbarHeight = 80; // Account for fixed navbar
-                  const elementPosition = contactSection.offsetTop - navbarHeight;
-                  
-                  window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth'
-                  });
+                if (typeof window !== 'undefined') {
+                  const contactSection = document.querySelector('#contact');
+                  if (contactSection) {
+                    const navbarHeight = 80; // Account for fixed navbar
+                    const elementPosition = contactSection.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
                 }
               }}
             >

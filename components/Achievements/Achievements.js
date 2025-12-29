@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 const Achievements = () => {
@@ -19,7 +18,6 @@ const Achievements = () => {
       technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
       award: "1st Place & Best Innovation Award"
     },
-   
   ];
 
   return (
@@ -37,17 +35,12 @@ const Achievements = () => {
             <div key={achievement.id} className={`achievement-card ${achievement.image ? 'featured' : ''}`}>
               {achievement.image && (
                 <div className="achievement-image">
-                  <Image 
+                  <Image
                     src={achievement.image}
                     alt={achievement.title}
                     width={400}
                     height={300}
                     className="achievement-img"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                      const placeholder = e.currentTarget.parentElement.querySelector(".image-placeholder");
-                      if (placeholder) placeholder.style.display = "flex";
-                    }}
                   />
                   <div className="image-placeholder" style={{display: 'none'}}>
                     <div className="placeholder-icon">

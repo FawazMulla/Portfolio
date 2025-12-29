@@ -1,0 +1,272 @@
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    subject: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // Email submission with fallback to local API for testing
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Check if EmailJS is configured
+      const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID || process.env.REACT_APP_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID || process.env.REACT_APP_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY || process.env.REACT_APP_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey && 
+          serviceId !== 'your_service_id_here' && 
+          templateId !== 'your_template_id_here' && 
+          publicKey !== 'your_public_key_here') {
+        
+        // Use EmailJS if properly configured
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            company: formData.company,
+            subject: formData.subject,
+            message: formData.message,
+          },
+          publicKey
+        );
+        
+        alert("Thanks for reaching out! I'll get back to you soon.");
+      } else {
+        // Fallback to local API for testing
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        
+        if (response.ok) {
+          alert("Message sent to console! Check your terminal for details.");
+        } else {
+          throw new Error(result.message || 'Failed to send message');
+        }
+      }
+
+      // Clear form on success
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Contact form error:', error);
+      alert('Error sending message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const contactInfo = [
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <polyline points="22,6 12,13 2,6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      title: "Email",
+      value: "fawazmulla5@gmail.com",
+      link: "mailto:fawazmulla5@gmail.com"
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      title: "Linkedin",
+      value: "Mohammed Fawaz Mulla",
+      link: "https://www.linkedin.com/in/mohammed-fawaz-mulla-134b1928a/"
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="10" r="3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      title: "Location",
+      value: "Mumbai, Maharastra",
+      link: "https://www.google.com/maps?ll=18.96871,72.830823&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=6733443441370304119"
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="10" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <polyline points="12,6 12,12 16,14" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      title: "Response Time",
+      value: "Usually within a day",
+      link: "#contact"
+    }
+  ];
+
+  return (
+    <section id="contact" className="contact section-padding">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">Let's Connect</h2>
+          <p className="section-subtitle">
+            Interested in collaborating on projects or discussing technology? I'd love to hear from you!
+          </p>
+        </div>
+
+        <div className="contact-content">
+          <div className="contact-info">
+            <div className="info-header">
+              <h3>Get in Touch</h3>
+              <p>
+                Always open to meaningful conversations around technology, collaboration, and career opportunities.
+              </p>
+            </div>
+
+            <div className="contact-methods">
+              {contactInfo.map((info, index) => (
+                <a key={index} href={info.link} className="contact-method">
+                  <div className="method-icon">{info.icon}</div>
+                  <div className="method-info">
+                    <div className="method-title">{info.title}</div>
+                    <div className="method-value">{info.value}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="availability-status">
+              <div className="status-indicator">
+                <div className="status-dot"></div>
+                <span>Open to collaborations</span>
+              </div>
+              <p>Always interested in learning, opportunities and project collaborations.</p>
+            </div>
+          </div>
+
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Your Name"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Youremail@company.com"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                placeholder="Your Company"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="subject">Message Type *</label>
+              <select
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select message type</option>
+                <option value="collaboration">Project Collaboration</option>
+                <option value="Recruiment">Recruiment</option>
+                <option value="study-group">Study Group</option>
+                <option value="tech-discussion">Tech Discussion</option>
+                <option value="networking">Networking</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Your Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows="6"
+                placeholder="Tell me what you'd like to discuss or collaborate on..."
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="spinner"></div>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="22" y1="2" x2="11" y2="13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polygon points="22,2 15,22 11,13 2,9 22,2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </>
+              )}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

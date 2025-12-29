@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('technical');

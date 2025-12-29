@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -43,7 +41,16 @@ const Footer = () => {
   ];
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleLinkClick = (href) => (e) => {
+    e.preventDefault();
+    if (typeof document !== 'undefined') {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -57,24 +64,7 @@ const Footer = () => {
                 A student developer who loves learning, building, and turning ideas into working products.
                 <br></br>Curious mind • Building things that work
               </p>
-              
-              
             </div>
-
-            {/* <div className="footer-social">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                  aria-label={link.name}
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div> */}
           </div>
 
           <div className="footer-section">
@@ -82,13 +72,7 @@ const Footer = () => {
             <ul className="footer-links">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
+                  <a href={link.href} onClick={handleLinkClick(link.href)}>
                     {link.name}
                   </a>
                 </li>
@@ -112,32 +96,19 @@ const Footer = () => {
             <div className="footer-contact">
               <div className="footer-social">
                 {socialLinks.map((link) => (
-                  <p key={link.name}><a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link"
-                    aria-label={link.name}
-                  >
-                    {link.icon}
-                  </a></p>
+                  <p key={link.name}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-link"
+                      aria-label={link.name}
+                    >
+                      {link.icon}
+                    </a>
+                  </p>
                 ))}
               </div>
-
-              {/* <p>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" strokeWidth="2"/>
-                  <polyline points="22,6 12,13 2,6" strokeWidth="2"/>
-                </svg>
-                fawazmulla5@gmail.com
-              </p>
-              <p>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" strokeWidth="2"/>
-                  <circle cx="12" cy="10" r="3" strokeWidth="2"/>
-                </svg>
-                University Campus
-              </p> */}
             </div>
 
             <div className="availability-badge">

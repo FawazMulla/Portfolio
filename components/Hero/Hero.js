@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
 
 const Hero = () => {
@@ -41,30 +41,34 @@ const Hero = () => {
   }, [charIndex, isDeleting, roleIndex, roles]);
 
   const scrollToContact = () => {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      const navbarHeight = 80; // Account for fixed navbar
-      const elementPosition = contactSection.offsetTop - navbarHeight;
+    if (typeof window !== 'undefined') {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        const navbarHeight = 80; // Account for fixed navbar
+        const elementPosition = contactSection.offsetTop - navbarHeight;
 
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    } else {
-      console.warn('Contact section not found');
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        console.warn('Contact section not found');
+      }
     }
   };
 
   const scrollToProjects = () => {
-    const projectsSection = document.querySelector('#projects');
-    if (projectsSection) {
-      const navbarHeight = 80; // Account for fixed navbar
-      const elementPosition = projectsSection.offsetTop - navbarHeight;
+    if (typeof window !== 'undefined') {
+      const projectsSection = document.querySelector('#projects');
+      if (projectsSection) {
+        const navbarHeight = 80; // Account for fixed navbar
+        const elementPosition = projectsSection.offsetTop - navbarHeight;
 
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -149,10 +153,7 @@ const Hero = () => {
                 height={300}
                 className="profile-image"
                 priority
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling.style.display = 'flex';
-                }}
+                style={{ border: '5px solid red' }}
               />
               <div className="profile-placeholder" style={{ display: 'none' }}>
                 <div className="placeholder-icon">

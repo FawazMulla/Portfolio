@@ -12,19 +12,53 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('dark');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setMounted(true);
+    // Safe localStorage access after component mounts
+    let savedTheme = 'dark';
+    if (typeof window !== 'undefined' && window.localStorage) {
+      try {
+        savedTheme = localStorage.getItem('theme') || 'dark';
+      } catch (error) {
+        console.warn('localStorage not available:', error);
+        savedTheme = 'dark';
+      }
+    }
     setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
   }, []);
 
   const toggleTheme = () => {
+    if (!mounted) return; // Prevent theme toggle before hydration
+    
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    
+    // Safe localStorage and document access
+    if (typeof window !== 'undefined' && window.localStorage) {
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch (error) {
+        console.warn('localStorage not available:', error);
+      }
+    }
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', newTheme);
+    }
   };
+
+  // Prevent hydration mismatch by not rendering theme-dependent content until mounted
+  if (!mounted) {
+    return (
+      <ThemeContext.Provider value={{ theme: 'dark', toggleTheme: () => {} }}>
+        {children}
+      </ThemeContext.Provider>
+    );
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

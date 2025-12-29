@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Experience = () => {
   const experiences = [
     {
@@ -32,21 +30,6 @@ const Experience = () => {
       ],
       technologies: ["HTML", "CSS", "JavaScript", "Git", "PHP", "Bootstrap","React"]
     }
-    // ,{
-    //   title: "Computer Science Tutor",
-    //   company: "University Tutoring Center",
-    //   period: "2023 - Present",
-    //   location: "Campus",
-    //   type: "Part-time",
-    //   description: "Helping fellow students understand programming concepts and complete assignments in introductory computer science courses.",
-    //   achievements: [
-    //     "Tutored 20+ students in Python and Java programming fundamentals",
-    //     "Improved student understanding of object-oriented programming concepts",
-    //     "Developed study materials and practice problems for common topics",
-    //     "Maintained 95% student satisfaction rating"
-    //   ],
-    //   technologies: ["Python", "Java", "C++", "Algorithm Design", "Problem Solving"]
-    // }
   ];
 
   return (
