@@ -4,7 +4,7 @@ const Experience = () => {
       title: "Information Technology Student",
       company: "M.H Saboo Siddik College of engineering",
       period: "2023 - Present",
-      location: "Mumbai, Maharastra",
+      location: "Mumbai, Maharashtra",
       type: "Student",
       description: "Currently pursuing Bachelor's degree in Information Technology with focus on software development, database systems, and network administration.",
       achievements: [
@@ -19,7 +19,7 @@ const Experience = () => {
       title: "Web Development Intern",
       company: "TechioLaza Innovations",
       period: "Summer 2025",
-      location: "Mumbai, Maharastra",
+      location: "Mumbai, Maharashtra",
       type: "Internship",
       description: "Gained hands-on experience in web development while working on real client projects and learning industry best practices.",
       achievements: [

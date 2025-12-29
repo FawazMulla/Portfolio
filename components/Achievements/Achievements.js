@@ -6,7 +6,7 @@ const Achievements = () => {
     {
       id: 1,
       title: "Hackathon Winner - Xcelarate - 2025",
-      description: "First place winner at the national level hackathon with our innovative application Ascend Apex (Platform4Excellance) made using OracleApex.",
+      description: "First place winner at the national level hackathon with our innovative application Ascend Apex (Platform4Excellence) made using OracleApex.",
       date: "March 2024",
       category: "Competition",
       image: getAssetPath("images/hackathon-win.JPG"),

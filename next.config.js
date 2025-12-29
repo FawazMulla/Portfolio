@@ -6,6 +6,7 @@ const nextConfig = {
     unoptimized: true
   },
   basePath: process.env.NODE_ENV === 'production' ? '/Portfolio' : '',
+  //for github pages
   assetPrefix: process.env.NODE_ENV === 'production' ? '/Portfolio/' : '',
   
   // Compression and optimization

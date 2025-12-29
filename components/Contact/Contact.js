@@ -101,7 +101,7 @@ const Contact = () => {
         </svg>
       ),
       title: "Location",
-      value: "Mumbai, Maharastra",
+      value: "Mumbai, Maharashtra",
       link: "https://www.google.com/maps?ll=18.96871,72.830823&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=6733443441370304119"
     },
     {
@@ -207,7 +207,7 @@ const Contact = () => {
               >
                 <option value="">Select message type</option>
                 <option value="collaboration">Project Collaboration</option>
-                <option value="Recruiment">Recruiment</option>
+                <option value="Recruitment">Recruitment</option>
                 <option value="study-group">Study Group</option>
                 <option value="tech-discussion">Tech Discussion</option>
                 <option value="networking">Networking</option>
