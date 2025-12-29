@@ -10,6 +10,7 @@ import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
 export default function Home() {
+  const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
   const siteUrl = 'https://fawazmulla.github.io/Portfolio';
   const title = 'Mohammed Fawaz Mulla - Full Stack Developer & IT Student';
   const description = 'Full Stack Developer and IT Student specializing in React, Node.js, and modern web technologies. View my projects, skills, and experience in software development.';
@@ -48,13 +49,13 @@ export default function Home() {
         <meta property="twitter:image:alt" content="Mohammed Fawaz Mulla - Full Stack Developer" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href={`${basePath}/favicon.ico`} />
+        <link rel="icon" type="image/png" sizes="16x16" href={`${basePath}/favicon-16x16.png`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${basePath}/favicon-32x32.png`} />
+        <link rel="icon" type="image/png" sizes="48x48" href={`${basePath}/favicon-48x48.png`} />
+        <link rel="icon" type="image/png" sizes="192x192" href={`${basePath}/favicon-192.png`} />
+        <link rel="icon" type="image/png" sizes="512x512" href={`${basePath}/favicon-512x512.png`} />
+        <link rel="apple-touch-icon" href={`${basePath}/apple-touch-icon.png`} />
 
         {/* Canonical URL */}
         <link rel="canonical" href={siteUrl} />

@@ -144,7 +144,7 @@ const Hero = () => {
           <div className="profile-section">
             <div className="profile-photo">
               <Image
-                src={getAssetPath("images/profile-photo.JPG")}
+                src={getAssetPath("images/profile-photo.webp")}
                 alt="Mohammed Fawaz Mulla - IT Student"
                 width={300}
                 height={300}
@@ -162,7 +162,7 @@ const Hero = () => {
                     <circle cx="12" cy="7" r="4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <p>Add your photo to here<br />/public/images/profile-photo.jpg</p>
+                <p>Add your photo to here<br />/public/images/profile-photo.webp</p>
               </div>
             </div>
           </div>

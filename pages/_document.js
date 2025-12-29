@@ -1,5 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
+// Get basePath for production
+const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
+
 export default function Document() {
   return (
     <Html lang="en">
@@ -19,8 +22,17 @@ export default function Document() {
         <meta name="theme-color" content="#1a1a1a" />
         <meta name="msapplication-TileColor" content="#1a1a1a" />
         
+        {/* Favicons */}
+        <link rel="icon" href={`${basePath}/favicon.ico`} />
+        <link rel="icon" type="image/png" sizes="16x16" href={`${basePath}/favicon-16x16.png`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${basePath}/favicon-32x32.png`} />
+        <link rel="icon" type="image/png" sizes="48x48" href={`${basePath}/favicon-48x48.png`} />
+        <link rel="icon" type="image/png" sizes="192x192" href={`${basePath}/favicon-192.png`} />
+        <link rel="icon" type="image/png" sizes="512x512" href={`${basePath}/favicon-512x512.png`} />
+        <link rel="apple-touch-icon" href={`${basePath}/apple-touch-icon.png`} />
+        
         {/* Manifest for PWA capabilities */}
-        <link rel="manifest" href="/Portfolio/manifest.json" />
+        <link rel="manifest" href={`${basePath}/manifest.json`} />
       </Head>
       <body>
         <Main />
