@@ -1,0 +1,82 @@
+
+/* Theme Toggle Styles */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-secondary, #f8f9fa);
+  color: var(--text-primary, #333);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-tertiary, #e9ecef);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(15deg);
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .theme-toggle {
+  background: var(--bg-secondary, #2d3748);
+  color: var(--text-primary, #f7fafc);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: var(--bg-tertiary, #4a5568);
+}
+
+/* Accessibility */
+.theme-toggle:focus {
+  outline: 2px solid var(--accent-primary, #007bff);
+  outline-offset: 2px;
+}
+
+.theme-toggle:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Animation for theme transition */
+.theme-toggle-icon svg {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Placeholder for SSR */
+.theme-toggle-placeholder {
+  border-radius: 50%;
+  background: var(--bg-secondary, #f8f9fa);
+  opacity: 0.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .theme-toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}

@@ -19,7 +19,7 @@ const Contact = () => {
     });
   };
 
-  // Email submission with fallback to local API for testing
+  // Email submission using EmailJS
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -35,7 +35,7 @@ const Contact = () => {
           templateId !== 'your_template_id_here' && 
           publicKey !== 'your_public_key_here') {
         
-        // Use EmailJS if properly configured
+        // Use EmailJS to send email
         await emailjs.send(
           serviceId,
           templateId,
@@ -50,36 +50,22 @@ const Contact = () => {
         );
         
         alert("Thanks for reaching out! I'll get back to you soon.");
-      } else {
-        // Fallback to local API for testing
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-
-        const result = await response.json();
         
-        if (response.ok) {
-          alert("Message sent to console! Check your terminal for details.");
-        } else {
-          throw new Error(result.message || 'Failed to send message');
-        }
+        // Clear form on success
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        // EmailJS not configured - show helpful message
+        alert('Email service is not configured yet. Please contact me directly at fawazmulla5@gmail.com');
       }
-
-      // Clear form on success
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: ''
-      });
     } catch (error) {
       console.error('Contact form error:', error);
-      alert('Error sending message. Please try again.');
+      alert('Error sending message. Please try again or contact me directly at fawazmulla5@gmail.com');
     } finally {
       setIsSubmitting(false);
     }

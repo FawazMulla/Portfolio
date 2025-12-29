@@ -1,5 +1,6 @@
-import { ThemeProvider } from '../src/contexts/ThemeContext';
+import { ThemeProvider } from '../contexts/ThemeContext';
 import '../styles/globals.css';
+import '../styles/themes.css';
 import '../components/Navbar/Navbar.css';
 import '../components/Hero/Hero.css';
 import '../components/About/About.css';
