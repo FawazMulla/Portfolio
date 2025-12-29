@@ -96,17 +96,16 @@ const Footer = () => {
             <div className="footer-contact">
               <div className="footer-social">
                 {socialLinks.map((link) => (
-                  <p key={link.name}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-link"
-                      aria-label={link.name}
-                    >
-                      {link.icon}
-                    </a>
-                  </p>
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                    aria-label={link.name}
+                  >
+                    {link.icon}
+                  </a>
                 ))}
               </div>
             </div>

@@ -117,6 +117,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .project-image {
@@ -280,9 +281,29 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .project-card {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  .featured-badge {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
   
   .project-metrics {
@@ -302,11 +323,16 @@
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
+  
+  .projects-filter {
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .project-content {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
   }
   
   .project-title {
@@ -317,16 +343,84 @@
     height: 180px;
   }
   
+  .featured-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.4rem;
+  }
+  
+  .project-image {
+    height: 160px;
+  }
+  
   .project-icon {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   
   .projects-filter {
     gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .featured-badge {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.6rem;
+  }
+  
+  .project-metrics {
+    padding: 1.25rem;
+  }
+  
+  .metric-value {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .project-content {
+    padding: 1.25rem;
+  }
+  
+  .project-title {
+    font-size: 1.25rem;
+  }
+  
+  .project-image {
+    height: 140px;
+  }
+  
+  .featured-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.55rem;
+  }
+  
+  .project-metrics {
+    padding: 1rem;
   }
   
   .filter-btn {
     padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
