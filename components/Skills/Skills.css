@@ -224,6 +224,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .cert-year {
@@ -424,4 +425,8 @@
   .category-title {
     font-size: 1.125rem;
   }
+}
+.cert-status-link {
+  text-decoration: none;      /* removes blue underline */
+  color: inherit;             /* keeps text color */
 }

@@ -128,7 +128,7 @@ export default function Home() {
         <Achievements />
         <Experience />
         <Skills />
-        <Projects />
+        {/* <Projects /> */}
         <Contact />
         <Footer />
       </div>

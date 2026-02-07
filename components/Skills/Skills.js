@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from "next/link";
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('technical');
@@ -38,18 +39,20 @@ const Skills = () => {
 
   const certifications = [
     {
-      name: "Oracle Java SE 11 Developer",
-      issuer: "Oracle",
-      year: "2024",
-      level: "Professional",
-      color: "#f89820"
+      name: "Full Stack Web Developer",
+      issuer: "Scrimba",
+      year: "2025",
+      level: "certification",
+      color: "#f89820",
+      link: "https://drive.google.com/file/d/1S1ZIT7MN8JOrEOPin0eEy7-jk3ysxFgX/view?usp=drive_link"
     },
     {
-      name: "Responsive Web Design",
-      issuer: "freeCodeCamp",
-      year: "2023",
-      level: "Certification",
-      color: "#0a0a23"
+      name: "AI Foundations Associate",
+      issuer: "Oracle",
+      year: "2025",
+      level: "Associate",
+      color: "#0a0a23",
+      link: "https://drive.google.com/file/d/1Bm-TNM2Ip5rJV92CZB5iHnUviEQQLyST/view?usp=sharing"
     },
     {
       name: "Python Programming",
@@ -101,19 +104,19 @@ const Skills = () => {
         </div>
 
         <div className="skills-tabs">
-          <button 
+          <button
             className={`tab-btn ${activeTab === 'technical' ? 'active' : ''}`}
             onClick={() => setActiveTab('technical')}
           >
             Technical Skills
           </button>
-          <button 
+          <button
             className={`tab-btn ${activeTab === 'certifications' ? 'active' : ''}`}
             onClick={() => setActiveTab('certifications')}
           >
             Certifications
           </button>
-          <button 
+          <button
             className={`tab-btn ${activeTab === 'academic' ? 'active' : ''}`}
             onClick={() => setActiveTab('academic')}
           >
@@ -155,10 +158,25 @@ const Skills = () => {
                     <p className="cert-issuer">{cert.issuer}</p>
                     <div className="cert-footer">
                       <span className="cert-year">{cert.year}</span>
-                      <div className="cert-status">
-                        <span className="status-dot"></span>
-                        Verified
-                      </div>
+                      {cert.link ? (
+                        <Link
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cert-status-link"
+                        >
+                          <div className="cert-status">
+                            <span className="status-dot"></span>
+                            Verified
+                          </div>
+                        </Link>
+                      ) : (
+                        <div className="cert-status">
+                          <span className="status-dot"></span>
+                          Verified
+                        </div>
+                      )}
+
                     </div>
                   </div>
                 </div>
@@ -182,7 +200,7 @@ const Skills = () => {
           )}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
