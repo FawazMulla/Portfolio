@@ -109,8 +109,10 @@
   text-align: center;
   min-height: 80px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
 }
 
 .skill-card::before {
@@ -151,6 +153,65 @@
   color: var(--text-primary);
 }
 
+.skill-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-logo {
+  transform: scale(1.15);
+}
+
+/* Certifications logo */
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cert-logo-wrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.cert-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cert-logo-fallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* Academic logo */
+.academic-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.academic-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 /* Certifications */
 .certifications-grid {
   display: grid;
@@ -182,13 +243,6 @@
   transform: translateY(-10px);
   border-color: var(--accent-primary);
   box-shadow: var(--shadow-xl);
-}
-
-.cert-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 1.5rem;
 }
 
 .cert-level {

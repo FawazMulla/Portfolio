@@ -8,31 +8,34 @@ const Skills = () => {
     {
       category: "Programming Languages",
       skills: [
-        { name: "Python", color: "#3776ab" },
-        { name: "Java", color: "#f89820" },
-        { name: "JavaScript", color: "#f7df1e" },
-        { name: "C++", color: "#00599c" },
-        { name: "HTML/CSS", color: "#e34f26" }
+        { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+        { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" }
       ]
     },
     {
       category: "Web Development",
       skills: [
-        { name: "React", color: "#61dafb" },
-        { name: "Node.js", color: "#339933" },
-        { name: "Express.js", color: "#000000" },
-        { name: "Bootstrap", color: "#7952b3" },
-        { name: "REST APIs", color: "#58a6ff" }
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+        { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
       ]
     },
     {
       category: "Database & Tools",
       skills: [
-        { name: "MySQL", color: "#4479a1" },
-        { name: "MongoDB", color: "#47a248" },
-        { name: "Git/GitHub", color: "#f05032" },
-        { name: "VS Code", color: "#007acc" },
-        { name: "Linux", color: "#fcc624" }
+        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+        { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+        { name: "Linux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
       ]
     }
   ];
@@ -42,8 +45,10 @@ const Skills = () => {
       name: "Full Stack Web Developer",
       issuer: "Scrimba",
       year: "2025",
-      level: "certification",
-      color: "#f89820",
+      level: "Certification",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Scrimba_logo.svg/512px-Scrimba_logo.svg.png",
+      logoFallback: "S",
+      logoColor: "#f89820",
       link: "https://drive.google.com/file/d/1S1ZIT7MN8JOrEOPin0eEy7-jk3ysxFgX/view?usp=drive_link"
     },
     {
@@ -51,7 +56,9 @@ const Skills = () => {
       issuer: "Oracle",
       year: "2025",
       level: "Associate",
-      color: "#0a0a23",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
+      logoFallback: "O",
+      logoColor: "#f80000",
       link: "https://drive.google.com/file/d/1Bm-TNM2Ip5rJV92CZB5iHnUviEQQLyST/view?usp=sharing"
     },
     {
@@ -59,38 +66,46 @@ const Skills = () => {
       issuer: "Coursera",
       year: "2023",
       level: "Course Certificate",
-      color: "#3776ab"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/512px-Coursera-Logo_600x600.svg.png",
+      logoFallback: "C",
+      logoColor: "#0056d2"
     },
     {
       name: "Git Version Control",
       issuer: "GitHub",
       year: "2024",
       level: "Badge",
-      color: "#f05032"
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      logoFallback: "G",
+      logoColor: "#f05032"
     },
     {
       name: "JavaScript Algorithms",
       issuer: "freeCodeCamp",
       year: "2024",
       level: "Certification",
-      color: "#f7df1e"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FreeCodeCamp_logo.svg",
+      logoFallback: "fCC",
+      logoColor: "#0a0a23"
     },
     {
       name: "Database Design",
       issuer: "University",
       year: "2024",
       level: "Course Completion",
-      color: "#4479a1"
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      logoFallback: "DB",
+      logoColor: "#4479a1"
     }
   ];
 
   const academicSkills = [
-    { name: "Data Structures & Algorithms", description: "Advanced coursework completed" },
-    { name: "Database Design", description: "Relational and NoSQL databases" },
-    { name: "Software Engineering", description: "SDLC, Agile methodologies" },
-    { name: "Network Fundamentals", description: "TCP/IP, OSI model, protocols" },
-    { name: "Object-Oriented Programming", description: "Design patterns, SOLID principles" },
-    { name: "System Analysis & Design", description: "Requirements analysis, UML" }
+    { name: "Data Structures & Algorithms", description: "Advanced coursework completed", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "Database Design", description: "Relational and NoSQL databases", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "Software Engineering", description: "SDLC, Agile methodologies", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "Network Fundamentals", description: "TCP/IP, OSI model, protocols", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+    { name: "Object-Oriented Programming", description: "Design patterns, SOLID principles", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { name: "System Analysis & Design", description: "Requirements analysis, UML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
   ];
 
   return (
@@ -133,11 +148,8 @@ const Skills = () => {
                   <div className="skills-grid">
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex} className="skill-card">
-                        <div className="skill-header">
-                          <div className="skill-info">
-                            <h4 className="skill-name">{skill.name}</h4>
-                          </div>
-                        </div>
+                        <img src={skill.logo} alt={skill.name} className="skill-logo" />
+                        <h4 className="skill-name">{skill.name}</h4>
                       </div>
                     ))}
                   </div>
@@ -151,6 +163,17 @@ const Skills = () => {
               {certifications.map((cert, index) => (
                 <div key={index} className="certification-card">
                   <div className="cert-header">
+                    <div className="cert-logo-wrap">
+                      <img
+                        src={cert.logo}
+                        alt={cert.issuer}
+                        className="cert-logo"
+                        onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                      />
+                      <div className="cert-logo-fallback" style={{ background: cert.logoColor, display: 'none' }}>
+                        {cert.logoFallback}
+                      </div>
+                    </div>
                     <div className="cert-level">{cert.level}</div>
                   </div>
                   <div className="cert-content">
@@ -176,7 +199,6 @@ const Skills = () => {
                           Verified
                         </div>
                       )}
-
                     </div>
                   </div>
                 </div>
@@ -190,6 +212,7 @@ const Skills = () => {
                 {academicSkills.map((skill, index) => (
                   <div key={index} className="academic-card">
                     <div className="academic-header">
+                      <img src={skill.logo} alt={skill.name} className="academic-logo" />
                       <h4 className="academic-name">{skill.name}</h4>
                     </div>
                     <p className="academic-description">{skill.description}</p>

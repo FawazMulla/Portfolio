@@ -77,11 +77,6 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="container">
         <div className="hero-content">
-          <div className="hero-badge">
-            <div className="badge-dot"></div>
-            <span>3rd Year IT Student</span>
-          </div>
-
           <h1 className="hero-title">
             Hi, I'm <span className="text-gradient">Mohammed Fawaz Mulla</span>
           </h1>
