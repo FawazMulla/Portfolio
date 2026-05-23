@@ -2,33 +2,46 @@ const Experience = () => {
   const experiences = [
     {
       title: "Information Technology Student",
-      company: "M.H Saboo Siddik College of engineering",
-      period: "2023 - Present",
+      company: "M.H Saboo Siddik College of Engineering",
+      period: "Aug 2023 - 2027",
       location: "Mumbai, Maharashtra",
       type: "Student",
-      description: "Currently pursuing Bachelor's degree in Information Technology with focus on software development, database systems, and network administration.",
+      description: "Pursuing Bachelor of Engineering in Information Technology at Mumbai University with a strong focus on full-stack development, cloud, and AI integration.",
       achievements: [
-        "Maintaining an 8.2 GPA while completing advanced programming and systems coursework",
+        "Maintaining a CGPA of 8.19/10 across coursework in software engineering, databases, and systems",
         "Strong foundation in Data Structures, Algorithms, and Database Design through hands-on learning",
         "Designed, built, and deployed multiple full-stack web applications using modern technologies",
-        "Actively participated in coding challenges, hackathons, and project-based competitions"
+        "Active member of the ACM Chapter of MHSSCE"
       ],
-      technologies: ["Coding", "Database", "System Design", "DSA", "Version Control","Cloud","Networking"]
+      technologies: ["Coding", "Database", "System Design", "DSA", "Version Control", "Cloud", "Networking"]
     },
     {
       title: "Web Development Intern",
-      company: "TechioLaza Innovations",
-      period: "Summer 2025",
+      company: "Techiolaza Innovations",
+      period: "Aug 2025 - Oct 2025",
       location: "Mumbai, Maharashtra",
       type: "Internship",
-      description: "Gained hands-on experience in web development while working on real client projects and learning industry best practices.",
+      description: "Designed and developed responsive, user-centric web interfaces and maintained backend systems for real client projects.",
       achievements: [
-        "Developed responsive websites for 3 small business clients",
-        "Implemented API integrations for dynamic and scalable web applications.",
-        "Assisted in testing and debugging existing web applications",
-        "Created documentation for project handoffs and maintenance"
+        "Designed and developed responsive, user-centric web interfaces",
+        "Designed and maintained PHP database scripts for backend operations",
+        "Implemented API integrations for dynamic and scalable web applications"
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "Git", "PHP", "Bootstrap","React"]
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "Git", "Bootstrap", "React"]
+    },
+    {
+      title: "SDE Intern",
+      company: "Bitkraft Technology",
+      period: "Feb 2026 - Present",
+      location: "Mumbai, Maharashtra",
+      type: "Internship",
+      description: "Worked across game development, fintech, and automation domains, building production-grade systems using modern tech stacks.",
+      achievements: [
+        "Built game systems and functionalities in Unity & C#",
+        "Built a fintech application using Next.js, Python, and PostgreSQL with AI-based process automation",
+        "Created a lead automation solution using Power Automate & Python"
+      ],
+      technologies: ["Unity", "C#", "Next.js", "Python", "PostgreSQL", "Power Automate", "AI"]
     }
   ];
 

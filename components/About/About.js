@@ -1,24 +1,24 @@
 const About = () => {
   const achievements = [
     {
-      metric: "8.2",
-      label: "Current GPA",
-      description: "Maintaining strong academic performance"
+      metric: "8.19",
+      label: "CGPA",
+      description: "Bachelor of Engineering, Information Technology"
     },
     {
-      metric: "30+",
-      label: "Projects Built",
-      description: "Academic and personal coding projects"
+      metric: "2",
+      label: "Internships",
+      description: "Techiolaza Innovations & Bitkraft Technology"
     },
     {
-      metric: "8+",
-      label: "Technologies",
-      description: "Programming languages and frameworks learned"
+      metric: "9+",
+      label: "Certifications",
+      description: "AWS, Oracle Cloud, and more"
     },
     {
-      metric: "3+",
-      label: "Years Coding",
-      description: "Continuous learning and skill development"
+      metric: "1st",
+      label: "Hackathon Win",
+      description: "Xcelarate 2025 – National Level"
     }
   ];
 
@@ -36,24 +36,23 @@ const About = () => {
 
             <div className="about-description">
               <p>
-                I'm a student and full-stack developer pursuing my degree at
-                <strong> M.H Saboo Siddik College of engineering currently in 3rd year of Information Technology.
-                </strong>.
+                I'm a third-year Information Technology student at
+                <strong> M.H. Saboo Siddik College of Engineering, Mumbai University</strong> with a CGPA of 8.19/10.
               </p>
 
               <p>
-                I build and deploy end-to-end applications, working across backend systems, databases, and APIs
-                to deliver clean, scalable, production-ready solutions.
+                I build end-to-end full-stack systems — from databases and APIs to production deployments —
+                with experience across web, fintech, game development, and AI/ML domains.
               </p>
 
               <p>
-                I leverage low-code platforms, automation, and AI to ship faster and build smarter,
-                without compromising on quality or performance.
+                I leverage low-code platforms like Oracle APEX, automation tools like Power Automate,
+                and cloud services (AWS, Oracle Cloud) to ship fast without sacrificing quality.
               </p>
 
               <p>
-                My mission is to become a high-impact engineer and build products that scale, matter,
-                and make a real difference.
+                Winner of Xcelarate 2025, a national-level hackathon, and holder of 9+ certifications
+                across AWS and Oracle Cloud. Driven to build innovative, user-focused solutions that scale.
               </p>
             </div>
 

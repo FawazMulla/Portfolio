@@ -87,23 +87,23 @@ const Hero = () => {
           </div>
 
           <p className="hero-description">
-            I architect and deploy end-to-end full-stack systems, from databases to production.
-            Using low-code, automation, and AI, I ship fast without sacrificing scale or quality.
-            I build real-world products designed for impact, performance, and growth.
+            Third-year IT student, national hackathon winner, and full-stack developer with internship experience
+            in web, fintech, and game development. I build with Python, JavaScript, MERN, Django, Flask,
+            PostgreSQL, Oracle Cloud, AWS, and AI — shipping real products that scale.
           </p>
 
           <div className="hero-stats">
             <div className="stat-card">
-              <div className="stat-value">3rd</div>
-              <div className="stat-label">Year Student</div>
+              <div className="stat-value">8.19</div>
+              <div className="stat-label">CGPA</div>
             </div>
             <div className="stat-card">
-              <div className="stat-value">30+</div>
+              <div className="stat-value">25+</div>
               <div className="stat-label">Projects Built</div>
             </div>
             <div className="stat-card">
-              <div className="stat-value">8.2</div>
-              <div className="stat-label">GPA</div>
+              <div className="stat-value">9+</div>
+              <div className="stat-label">Certifications</div>
             </div>
           </div>
 
@@ -114,6 +114,14 @@ const Hero = () => {
                 <path d="M7 17L17 7M17 7H7M17 7V17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
+            <a href={getAssetPath('Resume.pdf')} download="Mohammed_Fawaz_Mulla_Resume.pdf" className="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <polyline points="7 10 12 15 17 10" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="12" y1="15" x2="12" y2="3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Resume
+            </a>
             <button onClick={scrollToContact} className="btn btn-secondary">
               Get in Touch
             </button>

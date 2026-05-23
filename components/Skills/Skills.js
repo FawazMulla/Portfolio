@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Link from "next/link";
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('technical');
@@ -9,93 +8,139 @@ const Skills = () => {
       category: "Programming Languages",
       skills: [
         { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-        { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+        { name: "C/C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+        { name: "C#", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+        { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
         { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
         { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" }
       ]
     },
     {
-      category: "Web Development",
+      category: "Frontend & Backend Frameworks",
       skills: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
         { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-        { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
+        { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+        { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+        { name: "Unity", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" }
       ]
     },
     {
-      category: "Database & Tools",
+      category: "Databases & Platforms",
       skills: [
+        { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+        { name: "Oracle DB 23ai", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
+        { name: "DynamoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
         { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-        { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-        { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-        { name: "Linux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
+        { name: "Oracle APEX", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
+        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
       ]
     }
   ];
 
   const certifications = [
     {
-      name: "Full Stack Web Developer",
-      issuer: "Scrimba",
+      name: "AWS Academy Graduate – Cloud Foundations",
+      issuer: "AWS Academy",
       year: "2025",
       level: "Certification",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Scrimba_logo.svg/512px-Scrimba_logo.svg.png",
-      logoFallback: "S",
-      logoColor: "#f89820",
-      link: "https://drive.google.com/file/d/1S1ZIT7MN8JOrEOPin0eEy7-jk3ysxFgX/view?usp=drive_link"
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      logoFallback: "AWS",
+      logoColor: "#FF9900",
+      link: "https://drive.google.com/file/d/12gWsIXygwQovKj6_IR_pfWWC1zXD94Nk/view?usp=drive_link"
     },
     {
-      name: "AI Foundations Associate",
+      name: "Microservices and CI/CD Pipeline Builder",
+      issuer: "AWS Academy",
+      year: "2025",
+      level: "Certification",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      logoFallback: "AWS",
+      logoColor: "#FF9900",
+      link :"https://drive.google.com/file/d/1AswqUgv74Rx42H00j6Y03ctOXkDpO0iM/view?usp=drive_link"
+    },
+     {
+      name: "Cloud Web Application Builder",
+      issuer: "AWS Academy",
+      year: "2025",
+      level: "Certification",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      logoFallback: "AWS",
+      logoColor: "#FF9900",
+      link :"https://drive.google.com/file/d/169CasGVMelkMb0AUb0YcdRi3J9UOQ8wl/view?usp=drive_link"
+    },
+    {
+      name: "OCI 2025 Certified AI Foundations Associate",
       issuer: "Oracle",
       year: "2025",
       level: "Associate",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
       logoFallback: "O",
       logoColor: "#f80000",
-      link: "https://drive.google.com/file/d/1Bm-TNM2Ip5rJV92CZB5iHnUviEQQLyST/view?usp=sharing"
+      link:"https://drive.google.com/file/d/1Bm-TNM2Ip5rJV92CZB5iHnUviEQQLyST/view?usp=drive_link"
     },
     {
-      name: "Python Programming",
-      issuer: "Coursera",
-      year: "2023",
-      level: "Course Certificate",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/512px-Coursera-Logo_600x600.svg.png",
-      logoFallback: "C",
-      logoColor: "#0056d2"
+      name: "Generative AI Professional",
+      issuer: "Oracle",
+      year: "2025",
+      level: "Professional",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
+      logoFallback: "O",
+      logoColor: "#f80000",
+      link:"https://drive.google.com/file/d/1AZsF95dmnyfHo67rEh6twycfHLc99nIq/view?usp=drive_link"
     },
     {
-      name: "Git Version Control",
-      issuer: "GitHub",
-      year: "2024",
-      level: "Badge",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-      logoFallback: "G",
-      logoColor: "#f05032"
+      name: "Oracle AI Vector Search Certified Professional",
+      issuer: "Oracle",
+      year: "2025",
+      level: "Professional",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
+      logoFallback: "O",
+      logoColor: "#f80000",
+      link:"https://drive.google.com/file/d/1dln6KoTXe16s3S-ejtT4f6t3d8cPE9sh/view?usp=drive_link"
     },
     {
-      name: "JavaScript Algorithms",
-      issuer: "freeCodeCamp",
-      year: "2024",
-      level: "Certification",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/FreeCodeCamp_logo.svg",
-      logoFallback: "fCC",
-      logoColor: "#0a0a23"
+      name: "OCI 2025 Certified Foundations Associate",
+      issuer: "Oracle",
+      year: "2025",
+      level: "Associate",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
+      logoFallback: "O",
+      logoColor: "#f80000",
+      link:"https://drive.google.com/file/d/1bRqwMzdx68dIAatC94eHm1HFZrRrKvHN/view?usp=drive_link"
     },
     {
-      name: "Database Design",
-      issuer: "University",
-      year: "2024",
-      level: "Course Completion",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      logoFallback: "DB",
-      logoColor: "#4479a1"
+      name: "Oracle APEX Cloud Developer Certified Professional",
+      issuer: "Oracle",
+      year: "2025",
+      level: "Professional",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
+      logoFallback: "O",
+      logoColor: "#f80000",
+      link:"https://drive.google.com/file/d/1ke4Ud9D0LObD6j_THRyz-qLVfTqaZ4Kr/view?usp=drive_link"
+    },
+    {
+      name: "The Fullstack Developer Path",
+      issuer: "Scrimba",
+      year: "2025",
+      level: "Course",
+      logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/40/d548ef33b3401f942edc9c24840b52/social.png?auto=format%2Ccompress&dpr=1&w=180&h=180",
+      logoFallback: "S",
+      logoColor: "#f89820",
+      link: "https://drive.google.com/file/d/1S1ZIT7MN8JOrEOPin0eEy7-jk3ysxFgX/view?usp=drive_link"
+    },
+    {
+      name: "Red Hat Academy (RHA 124)",
+      issuer: "Red Hat",
+      year: "2025",
+      level: "Course",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg",
+      logoFallback: "RH",
+      logoColor: "#EE0000",
+      link:"https://drive.google.com/file/d/1-Owz6HTCbqVtMcAD7AFcQ-Ro96kED05-/view?usp=drive_link"
     }
   ];
 
@@ -161,7 +206,12 @@ const Skills = () => {
           {activeTab === 'certifications' && (
             <div className="certifications-grid">
               {certifications.map((cert, index) => (
-                <div key={index} className="certification-card">
+                <div
+                  key={index}
+                  className="certification-card"
+                  onClick={() => cert.link && window.open(cert.link, '_blank', 'noopener,noreferrer')}
+                  style={cert.link ? { cursor: 'pointer' } : {}}
+                >
                   <div className="cert-header">
                     <div className="cert-logo-wrap">
                       <img
@@ -181,24 +231,6 @@ const Skills = () => {
                     <p className="cert-issuer">{cert.issuer}</p>
                     <div className="cert-footer">
                       <span className="cert-year">{cert.year}</span>
-                      {cert.link ? (
-                        <Link
-                          href={cert.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="cert-status-link"
-                        >
-                          <div className="cert-status">
-                            <span className="status-dot"></span>
-                            Verified
-                          </div>
-                        </Link>
-                      ) : (
-                        <div className="cert-status">
-                          <span className="status-dot"></span>
-                          Verified
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>

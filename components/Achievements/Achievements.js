@@ -5,20 +5,34 @@ const Achievements = () => {
   const achievements = [
     {
       id: 1,
-      title: "Hackathon Winner - Xcelarate - 2025",
-      description: "First place winner at the national level hackathon with our innovative application Ascend Apex (Platform4Excellence) made using OracleApex.",
-      date: "March 2024",
+      title: "Xcelarate 2025 Winner – National Level Hackathon",
+      description: "First place at Xcelarate 2025, a national-level hackathon, with Ascend APEX — a student-centric platform bridging academics and career readiness, built on Oracle APEX.",
+      date: "2025",
       category: "Competition",
       image: getAssetPath("images/hackathon-win.JPG"),
       details: [
-        "Backend & database engineer",
-        "Built a full-stack web application ",
-        "Implemented real-time collaboration features ",
-        "Presented to a panel of industry judges of Oracle"
+        "Built Ascend APEX with AI-driven market analysis and personalized Readiness Reports",
+        "Implemented Skill Passports validated by faculty for credibility",
+        "Integrated Ascend WellBeing Check to monitor student emotional trends",
+        "Presented to a panel of industry judges from Oracle"
       ],
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      award: "1st Place & Best Innovation Award"
+      technologies: ["Oracle APEX", "AI", "SQL", "JavaScript"],
+      award: "1st Place – Xcelarate 2025"
     },
+    {
+      id: 2,
+      title: "ACM Chapter Member – MHSSCE",
+      description: "Active member of the ACM (Association for Computing Machinery) Chapter at M.H. Saboo Siddik College of Engineering, contributing to tech events and community initiatives.",
+      date: "2023 – Present",
+      category: "Community",
+      image: null,
+      details: [
+        "Participated in ACM-organized workshops and coding events",
+        "Collaborated with peers on technical projects and knowledge sharing"
+      ],
+      technologies: [],
+      award: null
+    }
   ];
 
   return (
